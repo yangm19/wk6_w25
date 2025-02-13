@@ -1,0 +1,51 @@
+.grid {
+    display: grid;
+    grid-template-columns: 2% 3% 90% 3% 2%;
+    /* gap: 10px; */
+}
+
+.grid img {
+    grid-column: 3 / span 1;
+    width: 100%;
+    height: auto;
+    /* padding: 5px; */
+    box-sizing: border-box;
+}
+
+.grid img:nth-child(even) {
+    border: 5px dashed orange;
+}
+
+.grid img:first-child {
+    border: 5px solid green;
+    /* padding: 10px; */
+}
+
+img:hover {
+    box-shadow: 10px 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+@media all and (min-width: 750px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 2% 44% 4% 44% 2%;
+    }
+    .grid img:nth-child(odd) {
+        grid-column: 2 / span 1;
+    }
+    .grid img:nth-child(even) {
+        grid-column: 4 / span 1;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .animation {
+        transition: none;
+    }
+}
+
+/* Specifically target the last image in the grid to span three columns */
+/* .grid img:last-child {
+    grid-column: span 3;
+} */
